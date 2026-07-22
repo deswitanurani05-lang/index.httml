@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)file:///C:/Users/LAB1%20PC19/Downloads/gemini-code-1784687976873.html -->
+<html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | DESWITA NURANI - TKJ</title>
+    <!-- FontAwesome untuk Icon -->
+    <link rel="stylesheet" href="./Portofolio _ DESWITA NURANI - TKJ_files/all.min.css">
+    <style>
+        /* --- RESET & VARIABLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg-color: #080710;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --primary-neon: #00f3ff;
+            --secondary-neon: #ff007f;
+            --text-color: #ffffff;
+            --text-dim: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* --- BACKGROUND ANIMATION (MATRIX/NET GLOW) --- */
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .glow-circle-1 {
+            position: absolute;
+            top: 10%;
+            left: 15%;
+            width: 300px;
+            height: 300px;
+            background: var(--primary-neon);
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.3;
+            animation: float 8s infinite alternate ease-in-out;
+        }
+
+        .glow-circle-2 {
+            position: absolute;
+            bottom: 15%;
+            right: 15%;
+            width: 350px;
+            height: 350px;
+            background: var(--secondary-neon);
+            border-radius: 50%;
+            filter: blur(160px);
+            opacity: 0.25;
+            animation: float 10s infinite alternate-reverse ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(30px, 40px); }
+        }
+
+        /* --- NAVBAR --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(8, 7, 16, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-neon);
+            text-shadow: 0 0 10px var(--primary-neon);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-neon);
+            text-shadow: 0 0 8px var(--primary-neon);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 120px 8% 50px 8%;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h3 {
+            font-size: 1.2rem;
+            color: var(--secondary-neon);
+            text-shadow: 0 0 5px var(--secondary-neon);
+            margin-bottom: 10px;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary-neon);
+            text-shadow: 0 0 15px var(--primary-neon);
+        }
+
+        .hero-text p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .btn-neon {
+            display: inline-block;
+            padding: 12px 28px;
+            color: var(--primary-neon);
+            border: 2px solid var(--primary-neon);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 0 10px var(--primary-neon);
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-neon:hover {
+            background: var(--primary-neon);
+            color: #000;
+            box-shadow: 0 0 25px var(--primary-neon);
+        }
+
+        /* --- HERO IMAGE WITH NEON FRAME --- */
+        .hero-img-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-img-frame {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: var(--primary-neon);
+            border-bottom-color: var(--secondary-neon);
+            animation: spin 6s linear infinite;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- SECTIONS GENERAL --- */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title span {
+            color: var(--primary-neon);
+            text-shadow: 0 0 10px var(--primary-neon);
+        }
+
+        /* --- SKILLS SECTION (TKJ SPECIALITY) --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            transition: 0.4s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-neon);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            color: var(--secondary-neon);
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px var(--secondary-neon);
+        }
+
+        .skill-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* --- SOCIAL MEDIA & CONTACT SECTION --- */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+        }
+
+        .contact-info, .social-links-wrapper {
+            flex: 1;
+            min-width: 280px;
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary-neon);
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 243, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--primary-neon);
+        }
+
+        .contact-item div p {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        .contact-item div h4 {
+            font-size: 1rem;
+            word-break: break-all;
+        }
+
+        /* Social Icons Grid */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            border-color: var(--secondary-neon);
+            box-shadow: 0 0 15px var(--secondary-neon);
+            color: var(--secondary-neon);
+            transform: scale(1.03);
+        }
+
+        .social-btn i {
+            font-size: 1.2rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 140px;
+            }
+
+            .hero-text p {
+                margin: 0 auto 30px auto;
+            }
+
+            .nav-links {
+                display: none; /* Dapat dikembangkan menjadi hamburger menu */
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LIGHT GLOW BACKGROUND -->
+    <div class="bg-glow">
+        <div class="glow-circle-1"></div>
+        <div class="glow-circle-2"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">&lt;DESWITA/&gt;</div>
+        <ul class="nav-links">
+            <li><a href="file:///C:/Users/LAB1%20PC19/Downloads/gemini-code-1784687976873.html#home">Beranda</a></li>
+            <li><a href="file:///C:/Users/LAB1%20PC19/Downloads/gemini-code-1784687976873.html#about">Tentang</a></li>
+            <li><a href="file:///C:/Users/LAB1%20PC19/Downloads/gemini-code-1784687976873.html#skills">Keahlian</a></li>
+            <li><a href="file:///C:/Users/LAB1%20PC19/Downloads/gemini-code-1784687976873.html#contact">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h3>Hallo, Saya</h3>
+            <h1><span>DESWITA NURANI</span></h1>
+            <h2>Teknik Komputer &amp; Jaringan (TKJ)</h2>
+            <br>
+            <p>Siswa / Praktisi di bidang Teknik Komputer dan Jaringan. Berfokus pada konfigurasi jaringan, pemeliharaan hardware, instalasi sistem operasi, dan infrastruktur IT.</p>
+            <a href="file:///C:/Users/LAB1%20PC19/Downloads/gemini-code-1784687976873.html#contact" class="btn-neon"><i class="fa-solid fa-paper-plane"></i> Hubungi Saya</a>
+        </div>
+        <div class="hero-img-container">
+            <div class="hero-img-frame"></div>
+            <!-- Foto Avatar/Profil (Menggunakan Placeholder bertema Cyber/TKJ) -->
+            <img src="./Portofolio _ DESWITA NURANI - TKJ_files/deswita.jpeg" alt="Deswita Nurani" class="hero-img">
+        </div>
+    </section>
+
+    <!-- KEAHLIAN / SKILLS TKJ SECTION -->
+    <section id="skills">
+        <h2 class="section-title">Keahlian <span>TKJ</span></h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>Jaringan Komputer</h3>
+                <p>Konfigurasi MikroTik, Cisco Router, LAN/WAN, Subnetting, dan instalasi kabel UTP/FO.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-server"></i>
+                <h3>Administrasi Server</h3>
+                <p>Instalasi &amp; konfigurasi Server Linux (Debian/Ubuntu), Web Server, DNS, DHCP, dan FTP.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-desktop"></i>
+                <h3>Hardware &amp; Troubleshooting</h3>
+                <p>Perakitan PC, diagnosa kerusakan hardware, instalasi Sistem Operasi (Windows/Linux).</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Keamanan Jaringan</h3>
+                <p>Pengaturan Firewall, monitoring lalu lintas jaringan, dan pencegahan akses ilegal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK & SOSIAL MEDIA -->
+    <section id="contact">
+        <h2 class="section-title">Hubungi <span>Saya</span></h2>
+        <div class="contact-container">
+            
+            <!-- Info Kontak -->
+            <div class="contact-info">
+                <h3 style="margin-bottom: 25px; color: var(--primary-neon);">Informasi Kontak</h3>
+                
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <p>Email</p>
+                        <h4>deswitanurani05@gmail.com</h4>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <p>No. Telepon / WA</p>
+                        <h4>081382933454</h4>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <p>Jurusan</p>
+                        <h4>Teknik Komputer &amp; Jaringan</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Media Sosial -->
+            <div class="social-links-wrapper">
+                <h3 style="margin-bottom: 25px; color: var(--secondary-neon);">Media Sosial</h3>
+                <div class="social-grid">
+                    
+                    <a href="https://www.tiktok.com/@rany_nurani" target="_blank" class="social-btn">
+                        <i class="fa-brands fa-tiktok"></i> TikTok
+                    </a>
+
+                    <a href="https://www.instagram.com/_raninurani_?igsh=cTVmazc1Y3R0ZWV2&amp;utm_source=qri" target="_blank" class="social-btn">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+
+                    <a href="https://www.youtube.com/@raninurani2008" target="_blank" class="social-btn">
+                        <i class="fa-brands fa-youtube"></i> YouTube
+                    </a>
+
+                    <a href="https://www.facebook.com/profile.php?id=61552594211529&amp;mibextid=wwXIfr" target="_blank" class="social-btn">
+                        <i class="fa-brands fa-facebook"></i> Facebook
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 DESWITA NURANI | Teknik Komputer &amp; Jaringan. All Rights Reserved.</p>
+    </footer>
+
+
+</body></html>
